@@ -41,13 +41,11 @@ jobs:
 
       - name: Debug build output
         if: always()
-        run: |
-          echo "Listing build output:"
-          ls -R build/${{ matrix.shield }}/zephyr || echo "No output found."
+        run: ls -l build/${{ matrix.shield }}/zephyr/ || echo "No output found."
 
       - name: Upload firmware
         if: success()
-        uses: actions/upload-artifact@v3.1.4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.shield }}.uf2
           path: build/${{ matrix.shield }}/zephyr/zmk.uf2
