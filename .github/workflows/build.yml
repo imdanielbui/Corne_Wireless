@@ -41,11 +41,5 @@ jobs:
 
       - name: Debug build output
         if: always()
-        run: ls -l build/${{ matrix.shield }}/zephyr/ || echo "No output found."
-
-      - name: Upload firmware
-        if: success()
-        uses: actions/upload-artifact@v3
-        with:
-          name: ${{ matrix.shield }}.uf2
-          path: build/${{ matrix.shield }}/zephyr/zmk.uf2
+        run: |
+          echo "Build output for ${{ matrix.shield }}:"
