@@ -39,15 +39,23 @@ jobs:
             -d build/${{ matrix.shield }} \
             -- -DZMK_CONFIG=/tmp/zmk-config/config -DSHIELD=${{ matrix.shield }}
 
-      - name: Debug build output
+      - name: Debug build directory
+        if: always()
+        run: ls -R build/${{ matrix.shield }}/zephyr || echo "No output found."
+
+      - name: Check artifact existence
         if: always()
         run: |
-          echo "Build output for ${{ matrix.shield }}:"
-          ls -lh build/${{ matrix.shield }}/zephyr/ || echo "No output found."
+          if [ -f build/${{ matrix.shield }}/zephyr/zmk.uf2 ]; then
+            echo "✅ Artifact exists: build/${{ matrix.shield }}/zephyr/zmk.uf2"
+          else
+            echo "❌ Artifact missing: build/${{ matrix.shield }}/zephyr/zmk.uf2"
+            exit 1
+          fi
 
       - name: Upload firmware
         if: success()
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.shield }}.uf2
-          path: build/${{ matrix.shield }}/zephyr/zmk.uf2
+          name: "${{ matrix.shield }}.uf2"
+          path: "build/${{ matrix.shield }}/zephyr/zmk.uf2"
