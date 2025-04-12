@@ -41,20 +41,25 @@ jobs:
 
       - name: Debug build directory
         if: always()
-        run: ls -R build/${{ matrix.shield }}/zephyr || echo "No output found."
+        run: |
+          echo "📁 Contents of build/${{ matrix.shield }}/zephyr:"
+          ls -lh build/${{ matrix.shield }}/zephyr || echo "Build directory missing"
 
       - name: Check artifact existence
         if: always()
+        id: check_artifact
         run: |
           if [ -f build/${{ matrix.shield }}/zephyr/zmk.uf2 ]; then
-            echo "✅ Artifact exists: build/${{ matrix.shield }}/zephyr/zmk.uf2"
+            echo "✅ Artifact exists"
+            echo "exists=true" >> $GITHUB_OUTPUT
           else
-            echo "❌ Artifact missing: build/${{ matrix.shield }}/zephyr/zmk.uf2"
+            echo "❌ Artifact missing"
+            echo "exists=false" >> $GITHUB_OUTPUT
             exit 1
           fi
 
       - name: Upload firmware
-        if: success()
+        if: steps.check_artifact.outputs.exists == 'true'
         uses: actions/upload-artifact@v3
         with:
           name: "${{ matrix.shield }}.uf2"
