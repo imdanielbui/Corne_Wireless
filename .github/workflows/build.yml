@@ -1,5 +1,46 @@
+name: Build ZMK Firmware
+
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+          - board: nice_nano_v2
+            shield: corne_left
+          - board: nice_nano_v2
+            shield: corne_right
+
+    steps:
+      - name: Checkout user config
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install West and dependencies
+        run: |
+          pip install west
+          west init -l .
+          west update
+          west zephyr-export
+
+      - name: Copy config files (fix for pointing.h include)
+        run: cp -r ./config /tmp/zmk-config/
+
+      - name: Build firmware
+        run: |
+          west build -s zmk/app -b ${{ matrix.board }} \
+            -d build/${{ matrix.shield }} \
+            -- -DZMK_CONFIG=/tmp/zmk-config/config -DSHIELD=${{ matrix.shield }}
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.shield }}.uf2
+          path: build/${{ matrix.shield }}/zephyr/zmk.uf2
