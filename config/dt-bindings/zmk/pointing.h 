@@ -1,0 +1,27 @@
+#ifndef ZMK__DT_BINDINGS__ZMK_POINTING_H
+#define ZMK__DT_BINDINGS__ZMK_POINTING_H
+
+// Mouse movement directions
+#define MOVE_UP 0
+#define MOVE_DOWN 1
+#define MOVE_LEFT 2
+#define MOVE_RIGHT 3
+
+// Diagonal movement (tuỳ chọn, nếu cần)
+#define MOVE_UP_LEFT 4
+#define MOVE_UP_RIGHT 5
+#define MOVE_DOWN_LEFT 6
+#define MOVE_DOWN_RIGHT 7
+
+// Scroll directions
+#define SCRL_UP 8
+#define SCRL_DOWN 9
+#define SCRL_LEFT 10
+#define SCRL_RIGHT 11
+
+// Mouse button actions
+#define BUTTON_1 0   // Left click
+#define BUTTON_2 1   // Right click
+#define BUTTON_3 2   // Middle click
+
+#endif /* ZMK__DT_BINDINGS__ZMK_POINTING_H */
