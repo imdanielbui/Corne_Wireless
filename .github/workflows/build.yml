@@ -26,7 +26,7 @@ jobs:
       - name: Install West and dependencies
         run: |
           pip install west
-          west init -l .
+          west init -l zmk
           west update
           west zephyr-export
 
@@ -43,3 +43,11 @@ jobs:
         if: always()
         run: |
           echo "Build output for ${{ matrix.shield }}:"
+          ls -lh build/${{ matrix.shield }}/zephyr/ || echo "No output found."
+
+      - name: Upload firmware
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.shield }}.uf2
+          path: build/${{ matrix.shield }}/zephyr/zmk.uf2
