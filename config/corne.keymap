@@ -56,10 +56,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB         &hmr F1 Q  &kp W  &hmr F3 E        &kp R  &hmr F5 T    &kp Y      &kp U              &hmr F8 I  &kp O    &hmr F12 P  &kp BSPC
-&kp LEFT_SHIFT  &kp A      &kp S  &hmr LEFT_GUI D  &kp F  &kp G        &kp H      &kp J              &kp K      &kp L    &kp SEMI    &kp SQT
-&kp LCTRL       &kp Z      &kp X  &kp C            &kp V  &kp B        &kp N      &kp M              &kp COMMA  &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
-                                  &kp LGUI         &mo 1  &kp ENTER    &kp SPACE  &lt 2 PRINTSCREEN  &kp RALT
+&kp TAB         &hmr F1 Q  &kp W  &hmr F3 E        &kp R  &hmr F5 T    &kp Y      &kp U   &hmr F8 I  &kp O    &hmr F12 P  &kp BSPC
+&kp LEFT_SHIFT  &kp A      &kp S  &hmr LEFT_GUI D  &kp F  &kp G        &kp H      &kp J   &kp K      &kp L    &kp SEMI    &kp SQT
+&kp LCTRL       &kp Z      &kp X  &kp C            &kp V  &kp B        &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
+                                  &kp LGUI         &mo 1  &kp ENTER    &kp SPACE  &tog 2  &kp RALT
             >;
         };
 
@@ -87,9 +87,9 @@
 
             bindings = <
 &kp F12  &kp F1      &kp F2      &kp F3          &kp F4          &kp F5         &kp F6          &kp F7          &kp F8        &kp F9           &kp F10                &kp F11
-&trans   &kp C_PREV  &kp C_NEXT  &mcla MB1 LCLK  &mcla MB2 RCLK  &mouse MCLK    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &kp BSLH               &kp GRAVE
+&trans   &kp C_PREV  &kp C_NEXT  &mcla MB1 LCLK  &mcla MB2 RCLK  &mouse MCLK    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans                 &trans
 &trans   &trans      &trans      &trans          &trans          &trans         &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &kp C_AL_TASK_MANAGER  &kp ESC
-                                 &kp LGUI        &trans          &kp C_PP       &kp SPACE       &trans          &kp RALT
+                                 &kp LGUI        &trans          &trans         &kp C_PP        &trans          &kp RALT
             >;
         };
     };
