@@ -39,8 +39,15 @@ jobs:
             -d build/${{ matrix.shield }} \
             -- -DZMK_CONFIG=/tmp/zmk-config/config -DSHIELD=${{ matrix.shield }}
 
+      - name: Debug build output
+        if: always()
+        run: |
+          echo "Listing build output:"
+          ls -R build/${{ matrix.shield }}/zephyr || echo "No output found."
+
       - name: Upload firmware
-        uses: actions/upload-artifact@v3
+        if: success()
+        uses: actions/upload-artifact@v3.1.4
         with:
           name: ${{ matrix.shield }}.uf2
           path: build/${{ matrix.shield }}/zephyr/zmk.uf2
