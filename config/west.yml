@@ -11,3 +11,6 @@ manifest:
       import: app/west.yml
   self:
     path: config
+  - name: Clone ZMK (fork from urob)
+    run: |
+      git clone https://github.com/imdanielbui/zmk.git --branch main zmk
