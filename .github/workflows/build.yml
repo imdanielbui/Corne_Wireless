@@ -58,9 +58,15 @@ jobs:
             exit 1
           fi
 
+      - name: Clone upload-artifact action manually
+        uses: actions/checkout@v3
+        with:
+          repository: actions/upload-artifact
+          path: .github/actions/upload-artifact
+
       - name: Upload firmware
         if: steps.check_artifact.outputs.exists == 'true'
-        uses: actions/upload-artifact@v3.1.3
+        uses: ./.github/actions/upload-artifact
         with:
           name: "${{ matrix.shield }}.uf2"
           path: "build/${{ matrix.shield }}/zephyr/zmk.uf2"
