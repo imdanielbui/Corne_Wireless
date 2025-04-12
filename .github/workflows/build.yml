@@ -21,6 +21,15 @@ jobs:
       - name: Clone ZMK repository
         run: git clone --depth=1 https://github.com/zmkfirmware/zmk zmk
 
+      - name: Verify west.yml existence
+        run: |
+          if [ ! -f zmk/west.yml ]; then
+            echo "❌ west.yml file missing in zmk/"
+            exit 1
+          else
+            echo "✅ Found west.yml in zmk/"
+          fi
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
