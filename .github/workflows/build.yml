@@ -18,6 +18,9 @@ jobs:
       - name: Checkout user config
         uses: actions/checkout@v3
 
+      - name: Clone ZMK repository
+        run: git clone --depth=1 https://github.com/zmkfirmware/zmk zmk
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
