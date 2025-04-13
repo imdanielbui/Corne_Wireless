@@ -17,6 +17,10 @@ jobs:
 
       - name: Init & Update west
         run: |
+          if [ -d ".west" ]; then
+            echo "Removing existing .west directory"
+            rm -rf .west
+          fi
           west init -l config
           west update
           west zephyr-export
