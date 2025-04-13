@@ -1,5 +1,32 @@
+name: Build ZMK firmware
+
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup deps
+        run: |
+          sudo apt update
+          sudo apt install -y cmake ninja-build gperf dfu-util device-tree-compiler wget python3-pip git unzip
+          pip3 install west
+
+      - name: Init & Update west
+        run: |
+          west init -l config
+          west update
+          west zephyr-export
+
+      - name: Build firmware
+        run: |
+          west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG=config -DSHIELD=corne_left
+
+      - name: Upload .uf2
+        uses: actions/upload-artifact@v3
+        with:
+          name: corne_left.uf2
+          path: build/zephyr/zmk.uf2
