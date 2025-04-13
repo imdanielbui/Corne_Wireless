@@ -7,17 +7,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          clean: true
+          submodules: false
+          fetch-depth: 1
+
       - name: Cleanup workspace
         run: |
           git reset --hard
           git clean -fdx
-
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          clean: true          # ✅ Clean workspace before starting
-          submodules: false    # ✅ We handle submodules manually
-          fetch-depth: 1       # ✅ Speeds up clone
 
       - name: Ensure clean working tree
         run: |
