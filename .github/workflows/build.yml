@@ -14,6 +14,11 @@ jobs:
           submodules: false    # ✅ We handle submodules manually
           fetch-depth: 1       # ✅ Speeds up clone
 
+      - name: Ensure clean working tree
+        run: |
+          git reset --hard
+          git clean -fdx
+
       - name: Setup dependencies
         run: |
           sudo apt update
