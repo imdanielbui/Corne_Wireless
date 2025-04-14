@@ -62,10 +62,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB         &hmr F1 Q  &kp W  &hmr F3 E       &kp R  &hmr LC(LS(T)) T    &kp Y      &kp U   &hmr F8 I           &kp O    &hmr F12 P  &kp BSPC
-&kp LEFT_SHIFT  &kp A      &kp S  &kp D           &kp F  &kp G               &kp H      &kp J   &kp K               &kp L    &kp SEMI    &kp SQT
-&kp LCTRL       &kp Z      &kp X  &kp C           &kp V  &kp B               &kp N      &kp M   &kp COMMA           &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
-                                  &hmr LALT LGUI  &mo 1  &kp ENTER           &kp SPACE  &tog 2  &hmr RS(RGUI) RALT
+&kp TAB         &hmr F1 Q  &kp W  &hmr F3 E       &kp R  &hmr LC(T) T    &kp Y      &kp U   &hmr F8 I           &kp O    &hmr F12 P  &kp BSPC
+&kp LEFT_SHIFT  &kp A      &kp S  &kp D           &kp F  &kp G           &kp H      &kp J   &kp K               &kp L    &kp SEMI    &kp SQT
+&kp LCTRL       &kp Z      &kp X  &kp C           &kp V  &kp B           &kp N      &kp M   &kp COMMA           &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
+                                  &hmr LALT LGUI  &mo 1  &kp ENTER       &kp SPACE  &tog 2  &hmr RS(RGUI) RALT
             >;
         };
 
@@ -77,10 +77,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB  &kp N1              &kp N2     &kp N3      &kp N4       &kp N5           &kp N6           &kp N7         &kp N8       &kp N9           &kp N0             &kp DEL
-&trans   &kp HOME            &kp GRAVE  &kp MINUS   &kp EQUAL    &kp END          &kp LEFT_ARROW   &kp DOWN       &kp UP       &kp RIGHT        &kp LBKT           &kp RBKT
-&trans   &hmr K_REDO K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp LC(LS(B))    &kp PRINTSCREEN  &kp PAGE_DOWN  &kp PAGE_UP  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE
-                                        &trans      &trans       &kp ENTER        &kp SPACE        &kp RGUI       &kp RALT
+&kp TAB  &kp N1              &kp N2     &kp N3      &kp N4       &kp N5                          &kp N6           &kp N7         &kp N8       &kp N9           &kp N0             &kp DEL
+&trans   &kp HOME            &kp GRAVE  &kp MINUS   &kp EQUAL    &kp NON_US_BACKSLASH            &kp LEFT_ARROW   &kp DOWN       &kp UP       &kp RIGHT        &kp LBKT           &kp RBKT
+&trans   &hmr K_REDO K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp LC(LS(B))                   &kp PRINTSCREEN  &kp PAGE_DOWN  &kp PAGE_UP  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE
+                                        &trans      &trans       &hmr LC(LS(ENTER)) LC(ENTER)    &kp SPACE        &kp RGUI       &trans
             >;
         };
 
@@ -92,10 +92,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp F12  &kp F1      &kp F2        &kp F3        &kp F4        &kp F5          &kp F6          &kp F7          &kp F8        &kp F9           &kp F10                &kp F11
-&trans   &kp C_PREV  &kp C_NEXT    &mkp LCLK     &mkp RCLK     &mouse MCLK     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &kp C_AC_FIND          &kp C_AC_CLOSE
-&trans   &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &kp C_AL_TASK_MANAGER  &kp ESC
-                                   &kp K_POWER   &trans        &trans          &kp C_PP        &trans          &kp RALT
+&kp F12  &kp F1              &kp F2     &kp F3        &hmr LA(F4) F4  &kp F5          &kp F6           &kp F7          &kp F8         &kp F9           &kp F10       &kp F11
+&trans   &mkp MB4            &mkp MB5   &mkp LCLK     &mkp RCLK       &mouse MCLK     &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &bt BT_SEL 1  &bt BT_SEL 2
+&trans   &hmr K_REDO K_UNDO  &kp K_CUT  &kp K_COPY    &kp K_PASTE     &bt BT_SEL 0    &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &bt BT_CLR    &kp ESC
+                                        &kp LEFT_GUI  &kp K_LOCK      &kp C_POWER     &mcla RCLK LCLK  &trans          &kp RIGHT_ALT
             >;
         };
     };
