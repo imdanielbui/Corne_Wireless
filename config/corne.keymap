@@ -67,10 +67,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB         &hmr F1 Q  &kp W  &hmr F3 E       &kp R       &hmr LC(T) T    &kp Y   &kp U      &hmr F8 I           &kp O    &hmr F12 P  &kp BSPC
-&kp LEFT_SHIFT  &kp A      &kp S  &kp D           &kp F       &kp G           &kp H   &kp J      &kp K               &kp L    &kp SEMI    &kp SQT
-&kp LCTRL       &kp Z      &kp X  &kp C           &kp V       &kp B           &kp N   &kp M      &kp COMMA           &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
-                                  &hmr LALT LGUI  &caps_word  &et 1 ENTER     &tog 2  &kp SPACE  &hmr RS(RGUI) RALT
+&kp TAB         &hmr F1 Q  &hmr LC(W) W  &hmr F3 E       &kp R       &hmr LC(T) T    &kp Y   &kp U      &hmr F8 I           &kp O    &hmr F12 P  &kp BSPC
+&kp LEFT_SHIFT  &kp A      &kp S         &kp D           &kp F       &kp G           &kp H   &kp J      &kp K               &kp L    &kp SEMI    &kp SQT
+&kp LCTRL       &kp Z      &kp X         &kp C           &kp V       &kp B           &kp N   &kp M      &kp COMMA           &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
+                                         &hmr LALT LGUI  &caps_word  &et 1 ENTER     &tog 2  &kp SPACE  &hmr RS(RGUI) RALT
             >;
         };
 
