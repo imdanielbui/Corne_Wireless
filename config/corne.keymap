@@ -30,12 +30,6 @@
             hold-trigger-on-release;
         };
 
-        mouse: mouse {
-            compatible = "zmk,behavior-mouse-key-press";
-            label = "MOUSE";
-            #binding-cells = <1>;
-        };
-
         mcla: mcla {
             compatible = "zmk,behavior-hold-tap";
             label = "MCLA";
@@ -45,9 +39,20 @@
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
             hold-trigger-on-release;
-            bindings = <&mouse>, <&mouse>;
+            bindings = <&mkp>, <&mkp>;
 
             tapping-term-ms = <280>;
+        };
+
+        et: et {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ET";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            hold-trigger-key-positions = <38>;
         };
     };
 
@@ -62,10 +67,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB         &hmr F1 Q  &kp W  &hmr F3 E       &kp R  &hmr LC(T) T    &kp Y      &kp U   &hmr F8 I           &kp O    &hmr F12 P  &kp BSPC
-&kp LEFT_SHIFT  &kp A      &kp S  &kp D           &kp F  &kp G           &kp H      &kp J   &kp K               &kp L    &kp SEMI    &kp SQT
-&kp LCTRL       &kp Z      &kp X  &kp C           &kp V  &kp B           &kp N      &kp M   &kp COMMA           &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
-                                  &hmr LALT LGUI  &mo 1  &kp ENTER       &kp SPACE  &tog 2  &hmr RS(RGUI) RALT
+&kp TAB         &hmr F1 Q  &kp W  &hmr F3 E       &kp R       &hmr LC(T) T    &kp Y   &kp U      &hmr F8 I           &kp O    &hmr F12 P  &kp BSPC
+&kp LEFT_SHIFT  &kp A      &kp S  &kp D           &kp F       &kp G           &kp H   &kp J      &kp K               &kp L    &kp SEMI    &kp SQT
+&kp LCTRL       &kp Z      &kp X  &kp C           &kp V       &kp B           &kp N   &kp M      &kp COMMA           &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
+                                  &hmr LALT LGUI  &caps_word  &et 1 ENTER     &tog 2  &kp SPACE  &hmr RS(RGUI) RALT
             >;
         };
 
@@ -92,10 +97,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp F12  &kp F1              &kp F2     &kp F3        &hmr LA(F4) F4  &kp F5          &kp F6           &kp F7          &kp F8         &kp F9           &kp F10       &kp F11
-&trans   &mkp MB4            &mkp MB5   &mkp LCLK     &mkp RCLK       &mouse MCLK     &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &bt BT_SEL 1  &bt BT_SEL 2
-&trans   &hmr K_REDO K_UNDO  &kp K_CUT  &kp K_COPY    &kp K_PASTE     &bt BT_SEL 0    &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &bt BT_CLR    &kp ESC
-                                        &kp LEFT_GUI  &kp K_LOCK      &kp C_POWER     &mcla RCLK LCLK  &trans          &kp RIGHT_ALT
+&hmr F12 LC(TAB)  &kp F1              &kp F2     &kp F3        &hmr LA(F4) F4  &kp F5         &kp F6           &kp F7          &kp F8         &kp F9           &kp F10     &kp F11
+&trans            &mkp MB4            &mkp MB5   &mkp LCLK     &mkp RCLK       &mkp MCLK      &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &bt BT_PRV  &kp K_LOCK
+&trans            &hmr K_REDO K_UNDO  &kp K_CUT  &kp K_COPY    &kp K_PASTE     &bt BT_NXT     &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &bt BT_CLR  &kp ESC
+                                                 &kp LEFT_GUI  &bt BT_SEL 0    &kp C_POWER    &mcla LCLK RCLK  &trans          &kp RIGHT_ALT
             >;
         };
     };
