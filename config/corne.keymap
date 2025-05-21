@@ -85,7 +85,7 @@
 &kp TAB  &kp N1              &kp N2     &kp N3      &kp N4       &kp N5                          &kp N6           &kp N7         &kp N8       &kp N9           &kp N0             &kp DEL
 &trans   &kp HOME            &kp GRAVE  &kp MINUS   &kp EQUAL    &kp NON_US_BACKSLASH            &kp LEFT_ARROW   &kp DOWN       &kp UP       &kp RIGHT        &kp LBKT           &kp RBKT
 &trans   &hmr K_REDO K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp LC(LS(B))                   &kp PRINTSCREEN  &kp PAGE_DOWN  &kp PAGE_UP  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE
-                                        &trans      &trans       &hmr LC(LS(ENTER)) LC(ENTER)    &kp SPACE        &kp RGUI       &trans
+                                        &trans      &trans       &hmr LC(LS(ENTER)) LC(ENTER)    &kp RIGHT_GUI    &trans         &trans
             >;
         };
 
@@ -97,10 +97,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&hmr F12 LC(TAB)  &kp F1              &kp F2     &kp F3        &hmr LA(F4) F4  &kp F5         &kp F6           &kp F7          &kp F8         &kp F9           &kp F10     &kp F11
-&trans            &mkp MB4            &mkp MB5   &mkp LCLK     &mkp RCLK       &mkp MCLK      &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &bt BT_PRV  &kp K_LOCK
-&trans            &hmr K_REDO K_UNDO  &kp K_CUT  &kp K_COPY    &kp K_PASTE     &bt BT_NXT     &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &bt BT_CLR  &kp ESC
-                                                 &kp LEFT_GUI  &bt BT_SEL 0    &kp C_POWER    &mcla LCLK RCLK  &trans          &kp RIGHT_ALT
+&hmr F12 LC(TAB)  &kp F1              &kp F2     &kp F3        &hmr LA(F4) F4  &kp F5         &kp F6          &kp F7           &kp F8         &kp F9           &kp F10     &kp F11
+&trans            &mkp MB4            &mkp MB5   &mkp LCLK     &mkp RCLK       &mkp MCLK      &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT  &bt BT_PRV  &kp K_LOCK
+&trans            &hmr K_REDO K_UNDO  &kp K_CUT  &kp K_COPY    &kp K_PASTE     &bt BT_NXT     &msc SCRL_LEFT  &msc SCRL_DOWN   &msc SCRL_UP   &msc SCRL_RIGHT  &bt BT_CLR  &kp ESC
+                                                 &kp LEFT_GUI  &bt BT_SEL 0    &kp C_POWER    &trans          &mcla RCLK LCLK  &kp RIGHT_ALT
             >;
         };
     };
