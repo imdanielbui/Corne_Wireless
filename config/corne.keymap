@@ -67,10 +67,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB         &hmr F1 Q  &hmr LC(W) W  &hmr F3 E       &kp R  &hmr LC(T) T        &kp Y      &kp U   &hmr F8 I           &kp O    &hmr F12 P  &kp BSPC
-&kp LEFT_SHIFT  &kp A      &kp S         &kp D           &kp F  &kp G               &kp H      &kp J   &kp K               &kp L    &kp SEMI    &kp SQT
-&kp LCTRL       &kp Z      &kp X         &kp C           &kp V  &hmr LC(LA(B)) B    &kp N      &kp M   &kp COMMA           &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
-                                         &hmr LALT LGUI  &mo 1  &kp ENTER           &kp SPACE  &tog 2  &hmr RS(RGUI) RALT
+&kp TAB         &kp Q  &hmr LC(W) W  &hmr F3 E       &kp R  &hmr LC(T) T        &kp Y      &kp U   &hmr F8 I  &kp O    &hmr F12 P  &kp BSPC
+&kp LEFT_SHIFT  &kp A  &kp S         &kp D           &kp F  &kp G               &kp H      &kp J   &kp K      &kp L    &kp SEMI    &kp SQT
+&kp LCTRL       &kp Z  &kp X         &kp C           &kp V  &hmr LC(LA(B)) B    &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
+                                     &hmr LALT LGUI  &mo 1  &kp ENTER           &kp SPACE  &tog 2  &kp RGUI
             >;
         };
 
@@ -82,10 +82,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB  &kp N1              &kp N2     &kp N3      &kp N4       &kp N5                          &kp N6           &kp N7         &kp N8       &kp N9           &kp N0             &kp DEL
-&trans   &kp HOME            &kp GRAVE  &kp MINUS   &kp EQUAL    &kp NON_US_BACKSLASH            &kp LEFT_ARROW   &kp DOWN       &kp UP       &kp RIGHT        &kp LBKT           &kp RBKT
-&trans   &hmr K_REDO K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp LC(LS(B))                   &kp PRINTSCREEN  &kp PAGE_DOWN  &kp PAGE_UP  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE
-                                        &trans      &trans       &hmr LC(LS(ENTER)) LC(ENTER)    &kp RIGHT_GUI    &trans         &trans
+&kp TAB  &hmr LG(N1) NUMBER_1  &hmr LG(N2) N2  &hmr LG(N3) N3  &kp N4          &kp N5                          &kp N6           &kp N7         &kp N8       &kp N9           &kp N0             &kp DEL
+&trans   &kp HOME              &kp GRAVE       &kp MINUS       &kp EQUAL       &kp NON_US_BACKSLASH            &kp LEFT_ARROW   &kp DOWN       &kp UP       &kp RIGHT        &kp LBKT           &kp RBKT
+&trans   &kp C_AC_UNDO         &kp C_AC_CUT    &kp C_AC_COPY   &kp C_AC_PASTE  &kp LC(LS(B))                   &kp PRINTSCREEN  &kp PAGE_DOWN  &kp PAGE_UP  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE
+                                               &trans          &trans          &hmr LC(LS(ENTER)) LC(ENTER)    &kp RIGHT_GUI    &trans         &trans
             >;
         };
 
@@ -97,10 +97,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&hmr F12 LC(TAB)  &kp F1              &kp F2     &kp F3        &hmr LA(F4) F4  &kp F5        &kp F6           &kp F7          &kp F8         &kp F9           &kp F10     &kp F11
-&trans            &mkp MB4            &mkp MB5   &mkp LCLK     &mkp RCLK       &mkp MCLK     &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &bt BT_PRV  &kp K_LOCK
-&trans            &hmr K_REDO K_UNDO  &kp K_CUT  &kp K_COPY    &kp K_PASTE     &bt BT_NXT    &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &bt BT_CLR  &kp ESC
-                                                 &kp LEFT_GUI  &bt BT_SEL 0    &trans        &mcla RCLK LCLK  &trans          &kp RIGHT_ALT
+&hmr F12 LC(TAB)  &kp F1         &kp F2        &kp F3         &hmr LA(F4) F4  &kp F5                               &kp F6           &kp F7          &kp F8         &kp F9           &kp F10     &kp F11
+&trans            &mkp MB4       &mkp MB5      &mkp LCLK      &mkp RCLK       &mkp MCLK                            &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &bt BT_NXT  &bt BT_CLR_ALL
+&trans            &kp C_AC_UNDO  &kp C_AC_CUT  &kp C_AC_COPY  &kp C_AC_PASTE  &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS    &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &bt BT_PRV  &kp ESC
+                                               &kp LEFT_GUI   &bt BT_SEL 0    &trans                               &mcla RCLK LCLK  &trans          &kp RIGHT_ALT
             >;
         };
     };
