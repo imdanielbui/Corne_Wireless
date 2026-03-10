@@ -6,7 +6,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmk
-      revision: v3.5.0
+      revision: v3.2
       import: app/west.yml
 
   self:
