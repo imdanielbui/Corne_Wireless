@@ -83,17 +83,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-<<<<<<< HEAD
 &kp TAB  &hmr LG(LS(N1)) NUMBER_1  &hmr LG(LS(N2)) N2  &hmr LG(LS(N3)) N3  &hmr LG(LS(N4)) N4  &hmr LG(LS(N5)) N5       &kp N6           &kp N7         &kp N8       &kp N9           &kp N0             &kp DEL
 &trans   &kp HOME                  &kp GRAVE           &kp MINUS           &kp EQUAL           &kp NON_US_BACKSLASH     &kp LEFT_ARROW   &kp DOWN       &kp UP       &kp RIGHT        &kp LBKT           &kp RBKT
 &trans   &kp LG(Z)                 &kp LG(X)           &kp LG(C)           &kp LG(V)           &kp LC(LS(LA(LG(B))))    &kp PRINTSCREEN  &kp PAGE_DOWN  &kp PAGE_UP  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE
                                                        &trans              &trans              &trans                   &kp RIGHT_GUI    &trans         &trans
-=======
-&kp TAB          &kp N1           &kp N2          &kp N3           &kp N4           &kp N5             &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI    &trans    &trans    &trans    &trans     &trans  &trans
-                                                  &rgb_ug RGB_SPI  &trans           &kp SPACE          &kp RET   &trans    &kp RALT
->>>>>>> d78ce94d546e2d5bcb3563b7e3529be7b95f54cc
             >;
         };
 
