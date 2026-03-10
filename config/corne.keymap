@@ -82,10 +82,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB  &hmr LG(N1) NUMBER_1  &hmr LG(N2) N2  &hmr LG(N3) N3  &kp N4     &kp N5                   &kp N6           &kp N7         &kp N8       &kp N9           &kp N0             &kp DEL
-&trans   &kp HOME              &kp GRAVE       &kp MINUS       &kp EQUAL  &kp NON_US_BACKSLASH     &kp LEFT_ARROW   &kp DOWN       &kp UP       &kp RIGHT        &kp LBKT           &kp RBKT
-&trans   &kp LG(Z)             &kp LG(X)       &kp LG(C)       &kp LG(V)  &kp LC(LS(LA(LG(B))))    &kp PRINTSCREEN  &kp PAGE_DOWN  &kp PAGE_UP  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE
-                                               &trans          &trans     &trans                   &kp RIGHT_GUI    &trans         &trans
+&kp TAB  &hmr LG(LS(N1)) NUMBER_1  &hmr LG(LS(N2)) N2  &hmr LG(LS(N3)) N3  &hmr LG(LS(N4)) N4  &hmr LG(LS(N5)) N5       &kp N6           &kp N7         &kp N8       &kp N9           &kp N0             &kp DEL
+&trans   &kp HOME                  &kp GRAVE           &kp MINUS           &kp EQUAL           &kp NON_US_BACKSLASH     &kp LEFT_ARROW   &kp DOWN       &kp UP       &kp RIGHT        &kp LBKT           &kp RBKT
+&trans   &kp LG(Z)                 &kp LG(X)           &kp LG(C)           &kp LG(V)           &kp LC(LS(LA(LG(B))))    &kp PRINTSCREEN  &kp PAGE_DOWN  &kp PAGE_UP  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE
+                                                       &trans              &trans              &trans                   &kp RIGHT_GUI    &trans         &trans
             >;
         };
 
