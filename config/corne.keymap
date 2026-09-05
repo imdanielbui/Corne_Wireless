@@ -11,7 +11,9 @@
 #include "dt-bindings/zmk/keys.h"
 #include "dt-bindings/zmk/pointing.h"
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 #include "duy_matrix9_corne42_zmk.dtsi"
 
 / {
@@ -61,6 +63,19 @@
             bindings = <&mo>, <&kp>;
 
             /* Tap sends Win; holding and pressing another key opens CAD. */
+
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <0>;
+            flavor = "balanced";
+        };
+
+        lower_layer: lower_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LOWER_LAYER";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <0>;
@@ -79,10 +94,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB         &kp Q  &hmr LG(W) W  &kp E         &kp R  &hmr LG(T) T                       &kp Y      &kp U   &kp I          &kp O    &hmr F12 P  &kp BSPC
-&kp LEFT_SHIFT  &kp A  &kp S         &kp D         &kp F  &kp G                              &kp H      &kp J   &kp K          &kp L    &kp SEMI    &kp SQT
-&kp LCTRL       &kp Z  &kp X         &kp C         &kp V  &kp B                              &kp N      &kp M   &kp COMMA      &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
-                                     &cadlt 3 LEFT_WIN  &mo 1  &hmr LS(LA(LC(LEFT_GUI))) ENTER    &kp SPACE  &tog 2  &kp RIGHT_ALT
+&kp TAB         &kp Q  &hmr LG(W) W  &kp E         &kp R             &hmr LG(T) T                       &kp Y      &kp U   &kp I          &kp O    &hmr F12 P  &kp BSPC
+&kp LEFT_SHIFT  &kp A  &kp S         &kp D         &kp F             &kp G                              &kp H      &kp J   &kp K          &kp L    &kp SEMI    &kp SQT
+&kp LCTRL       &kp Z  &kp X         &kp C         &kp V             &kp B                              &kp N      &kp M   &kp COMMA      &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
+                                     &kp LEFT_WIN  &lower_layer 3 1  &hmr LS(LA(LC(LEFT_GUI))) ENTER    &kp SPACE  &tog 2  &kp RIGHT_ALT
             >;
         };
 
@@ -126,10 +141,10 @@
             //                        | hold CAD | LWR | ENTER/HYPER | SPACE | RSE | ALT |
 
             bindings = <
-&m9_zs        &m9_rr  &m9_pp  &m9_gld  &m9_goc  &m9_gcu                 &m9_ggd  &m9_hal  &m9_pvl  &m9_mpc  &m9_wgt  &m9_d3p
-&m9_sn        &m9_m   &m9_co  &m9_r    &m9_mi   &m9_tr                  &m9_x    &m9_ec   &m9_sw1  &m9_sw2  &m9_lf   &m9_pip
-&kp LC(Z)     &m9_sp  &m9_j   &m9_bu   &m9_bdf  &m9_fe                  &m9_de   &m9_pj   &m9_pu   &m9_pra  &m9_bze  &m9_hed
-                                &trans  &mo 1    &hmr LS(LA(LC(LEFT_GUI))) ENTER    &kp SPACE  &tog 2  &kp RIGHT_ALT
+&m9_zs     &m9_rr  &m9_pp  &m9_gld  &m9_goc  &m9_gcu                            &m9_ggd    &m9_hal  &m9_pvl        &m9_mpc  &m9_wgt  &m9_d3p
+&m9_sn     &m9_m   &m9_co  &m9_r    &m9_mi   &m9_tr                             &m9_x      &m9_ec   &m9_sw1        &m9_sw2  &m9_lf   &m9_pip
+&kp LC(Z)  &m9_sp  &m9_j   &m9_bu   &m9_bdf  &m9_fe                             &m9_de     &m9_pj   &m9_pu         &m9_pra  &m9_bze  &m9_hed
+                           &trans   &mo 1    &hmr LS(LA(LC(LEFT_GUI))) ENTER    &kp SPACE  &tog 2   &kp RIGHT_ALT
             >;
         };
     };
