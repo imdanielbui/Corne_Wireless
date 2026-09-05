@@ -1,0 +1,189 @@
+/*
+ * Duy - Matrix 9 CAD macros for a 42-key Corne / ZMK.
+ *
+ * Include this file near the top of corne.keymap, after the ZMK key includes:
+ *   #include "duy_matrix9_corne42_zmk.dtsi"
+ *
+ * Each macro types a Rhino/Matrix alias followed by Space (Enter).
+ * Use only while the Rhino/Matrix command line has focus, not inside text fields.
+ */
+
+/ {
+    macros {
+        m9_zs: m9_zs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp Z &kp S &kp SPACE>;
+        };
+        m9_rr: m9_rr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp R &kp R &kp SPACE>;
+        };
+        m9_pp: m9_pp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp P &kp P &kp SPACE>;
+        };
+        m9_gld: m9_gld {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp G &kp L &kp D &kp SPACE>;
+        };
+        m9_goc: m9_goc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp G &kp O &kp C &kp SPACE>;
+        };
+        m9_gcu: m9_gcu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp G &kp C &kp U &kp SPACE>;
+        };
+        m9_sn: m9_sn {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp S &kp N &kp SPACE>;
+        };
+        m9_m: m9_m {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp M &kp SPACE>;
+        };
+        m9_co: m9_co {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp C &kp O &kp SPACE>;
+        };
+        m9_r: m9_r {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp R &kp SPACE>;
+        };
+        m9_mi: m9_mi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp M &kp I &kp SPACE>;
+        };
+        m9_tr: m9_tr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp T &kp R &kp SPACE>;
+        };
+        m9_sp: m9_sp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp S &kp P &kp SPACE>;
+        };
+        m9_j: m9_j {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp J &kp SPACE>;
+        };
+        m9_bu: m9_bu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp B &kp U &kp SPACE>;
+        };
+        m9_bdf: m9_bdf {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp B &kp D &kp F &kp SPACE>;
+        };
+        m9_fe: m9_fe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp F &kp E &kp SPACE>;
+        };
+        m9_ggd: m9_ggd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp G &kp G &kp D &kp SPACE>;
+        };
+        m9_hal: m9_hal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp H &kp A &kp L &kp SPACE>;
+        };
+        m9_pvl: m9_pvl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp P &kp V &kp L &kp SPACE>;
+        };
+        m9_mpc: m9_mpc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp M &kp P &kp C &kp SPACE>;
+        };
+        m9_wgt: m9_wgt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp W &kp G &kp T &kp SPACE>;
+        };
+        m9_d3p: m9_d3p {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp D &kp N3 &kp P &kp SPACE>;
+        };
+        m9_x: m9_x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp X &kp SPACE>;
+        };
+        m9_ec: m9_ec {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp E &kp C &kp SPACE>;
+        };
+        m9_sw1: m9_sw1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp S &kp W &kp N1 &kp SPACE>;
+        };
+        m9_sw2: m9_sw2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp S &kp W &kp N2 &kp SPACE>;
+        };
+        m9_lf: m9_lf {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp L &kp F &kp SPACE>;
+        };
+        m9_pip: m9_pip {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp P &kp I &kp P &kp SPACE>;
+        };
+        m9_de: m9_de {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp D &kp E &kp SPACE>;
+        };
+        m9_pj: m9_pj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp P &kp J &kp SPACE>;
+        };
+        m9_pu: m9_pu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp P &kp U &kp SPACE>;
+        };
+        m9_pra: m9_pra {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp P &kp R &kp A &kp SPACE>;
+        };
+        m9_bze: m9_bze {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp B &kp Z &kp E &kp SPACE>;
+        };
+        m9_hed: m9_hed {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp H &kp E &kp D &kp SPACE>;
+        };
+    };
+};

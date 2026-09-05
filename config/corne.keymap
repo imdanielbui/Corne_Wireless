@@ -11,10 +11,8 @@
 #include "dt-bindings/zmk/keys.h"
 #include "dt-bindings/zmk/pointing.h"
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include "dt-bindings/zmk/pointing.h"
 #include <dt-bindings/zmk/rgb.h>
+#include "duy_matrix9_corne42_zmk.dtsi"
 
 / {
     behaviors {
@@ -55,6 +53,19 @@
             quick-tap-ms = <175>;
             hold-trigger-key-positions = <38>;
         };
+
+        cadlt: cadlt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CAD_LAYER_TAP";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+
+            /* Tap sends Win; holding and pressing another key opens CAD. */
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <0>;
+            flavor = "balanced";
+        };
     };
 
     keymap {
@@ -71,7 +82,7 @@
 &kp TAB         &kp Q  &hmr LG(W) W  &kp E         &kp R  &hmr LG(T) T                       &kp Y      &kp U   &kp I          &kp O    &hmr F12 P  &kp BSPC
 &kp LEFT_SHIFT  &kp A  &kp S         &kp D         &kp F  &kp G                              &kp H      &kp J   &kp K          &kp L    &kp SEMI    &kp SQT
 &kp LCTRL       &kp Z  &kp X         &kp C         &kp V  &kp B                              &kp N      &kp M   &kp COMMA      &kp DOT  &kp FSLH    &hmr CAPSLOCK ESC
-                                     &kp LEFT_WIN  &mo 1  &hmr LS(LA(LC(LEFT_GUI))) ENTER    &kp SPACE  &tog 2  &kp RIGHT_ALT
+                                     &cadlt 3 LEFT_WIN  &mo 1  &hmr LS(LA(LC(LEFT_GUI))) ENTER    &kp SPACE  &tog 2  &kp RIGHT_ALT
             >;
         };
 
@@ -102,6 +113,23 @@
 &trans            &mkp MB4          &mkp MB5   &mkp LCLK     &mkp RCLK     &mkp MCLK          &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &bt BT_NXT  &bt BT_CLR_ALL
 &trans            &hmr LG(Y) LG(Z)  &kp LG(X)  &kp LG(C)     &kp LG(V)     &kp PRINTSCREEN    &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &bt BT_PRV  &kp ESC
                                                &kp LEFT_GUI  &bt BT_SEL 0  &trans             &mcla RCLK LCLK  &trans          &kp RIGHT_ALT
+            >;
+        };
+
+        cad_layer {
+            // Hold the left Win thumb key to use this layer.
+            // Left half is prioritized so the right hand can stay on the mouse.
+            // -----------------------------------------------------------------------------------------
+            // | ZS   | RR | PP | GLD | GOC | GCU |   | GGD | HAL | PVL | MPC | WGT | D3P |
+            // | NONE | M  | CO | R   | MI  | TR  |   | X   | EC  | SW1 | SW2 | LF  | PIP |
+            // | UNDO | SP | J  | BU  | BDF | FE  |   | DE  | PJ  | PU  | PRA | BZE | HED |
+            //                        | hold CAD | LWR | ENTER/HYPER | SPACE | RSE | ALT |
+
+            bindings = <
+&m9_zs        &m9_rr  &m9_pp  &m9_gld  &m9_goc  &m9_gcu                 &m9_ggd  &m9_hal  &m9_pvl  &m9_mpc  &m9_wgt  &m9_d3p
+&m9_sn        &m9_m   &m9_co  &m9_r    &m9_mi   &m9_tr                  &m9_x    &m9_ec   &m9_sw1  &m9_sw2  &m9_lf   &m9_pip
+&kp LC(Z)     &m9_sp  &m9_j   &m9_bu   &m9_bdf  &m9_fe                  &m9_de   &m9_pj   &m9_pu   &m9_pra  &m9_bze  &m9_hed
+                                &trans  &mo 1    &hmr LS(LA(LC(LEFT_GUI))) ENTER    &kp SPACE  &tog 2  &kp RIGHT_ALT
             >;
         };
     };
