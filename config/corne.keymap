@@ -83,6 +83,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        Layer_BL {
+            bindings = <&sl 4>;
+            key-positions = <37 40>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -110,9 +119,9 @@
 
             bindings = <
 &kp TAB  &hmr LG(LS(N1)) NUMBER_1  &hmr LG(LS(N2)) N2  &hmr LG(LS(N3)) N3  &hmr LG(LS(N4)) N4  &hmr LG(LS(N5)) N5       &kp N6           &kp N7         &kp N8       &kp N9           &kp N0             &kp DEL
-&trans   &kp HOME                  &kp GRAVE           &kp MINUS           &kp EQUAL           &kp NON_US_BACKSLASH     &kp LEFT_ARROW   &kp DOWN       &kp UP       &kp RIGHT        &kp LBKT           &kp RBKT
+&trans   &hmr END HOME             &kp GRAVE           &kp MINUS           &kp EQUAL           &kp NON_US_BACKSLASH     &kp LEFT_ARROW   &kp DOWN       &kp UP       &kp RIGHT        &kp LBKT           &kp RBKT
 &trans   &kp LG(Z)                 &kp LG(X)           &kp LG(C)           &kp LG(V)           &kp LC(LS(LA(LG(B))))    &kp PRINTSCREEN  &kp PAGE_DOWN  &kp PAGE_UP  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE
-                                                       &trans              &trans              &trans                   &kp RIGHT_GUI    &trans         &trans
+                                                       &trans              &trans              &trans                   &trans           &trans         &trans
             >;
         };
 
@@ -124,10 +133,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&hmr F12 LC(TAB)  &kp F1            &kp F2     &kp F3        &kp F4        &kp F5             &kp F6           &kp F7          &kp F8         &kp F9           &kp F10     &kp F11
-&trans            &mkp MB4          &mkp MB5   &mkp LCLK     &mkp RCLK     &mkp MCLK          &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &bt BT_NXT  &bt BT_CLR_ALL
-&trans            &hmr LG(Y) LG(Z)  &kp LG(X)  &kp LG(C)     &kp LG(V)     &kp PRINTSCREEN    &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &bt BT_PRV  &kp ESC
-                                               &kp LEFT_GUI  &bt BT_SEL 0  &trans             &mcla RCLK LCLK  &trans          &kp RIGHT_ALT
+&hmr F12 LC(TAB)  &kp F1            &kp F2     &kp F3        &kp F4     &kp F5             &kp F6           &kp F7          &kp F8         &kp F9           &kp F10  &kp F11
+&trans            &mkp MB4          &mkp MB5   &mkp LCLK     &mkp RCLK  &mkp MCLK          &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &trans   &trans
+&trans            &hmr LG(Y) LG(Z)  &kp LG(X)  &kp LG(C)     &kp LG(V)  &kp PRINTSCREEN    &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &trans   &hmr CAPSLOCK ESC
+                                               &kp LEFT_GUI  &trans     &trans             &mcla RCLK LCLK  &trans          &kp RIGHT_ALT
             >;
         };
 
@@ -144,7 +153,16 @@
 &m9_zs     &m9_rr  &m9_pp  &m9_gld  &m9_goc  &m9_gcu                            &m9_ggd    &m9_hal  &m9_pvl        &m9_mpc  &m9_wgt  &m9_d3p
 &m9_sn     &m9_m   &m9_co  &m9_r    &m9_mi   &m9_tr                             &m9_x      &m9_ec   &m9_sw1        &m9_sw2  &m9_lf   &m9_pip
 &kp LC(Z)  &m9_sp  &m9_j   &m9_bu   &m9_bdf  &m9_fe                             &m9_de     &m9_pj   &m9_pu         &m9_pra  &m9_bze  &m9_hed
-                           &trans   &mo 1    &hmr LS(LA(LC(LEFT_GUI))) ENTER    &kp SPACE  &tog 2   &kp RIGHT_ALT
+                           &trans   &trans   &hmr LS(LA(LC(LEFT_GUI))) ENTER    &kp SPACE  &tog 2   &kp RIGHT_ALT
+            >;
+        };
+
+        Bluetooth_Layer {
+            bindings = <
+&trans  &trans        &trans        &trans        &trans      &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_NXT  &bt BT_PRV    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans      &bt BT_CLR    &trans  &trans  &trans  &trans  &trans  &bt BT_CLR_ALL
+                                    &trans        &trans      &trans        &trans  &trans  &trans
             >;
         };
     };
