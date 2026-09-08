@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -9,5 +11,10 @@ manifest:
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
+    # Custom 128x32 OLED status screen with battery, layer, and pet widgets.
+    # This branch is the module's ZMK v0.3-compatible line.
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: 523b47e5513c58a6d3ffe68f25a7668551cb244b
   self:
     path: config
