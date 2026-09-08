@@ -133,10 +133,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&hmr F12 LC(TAB)  &kp F1            &kp F2     &kp F3        &kp F4     &kp F5             &kp F6           &kp F7          &kp F8         &kp F9           &kp F10  &kp F11
-&trans            &mkp MB4          &mkp MB5   &mkp LCLK     &mkp RCLK  &mkp MCLK          &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &trans   &trans
-&trans            &hmr LG(Y) LG(Z)  &kp LG(X)  &kp LG(C)     &kp LG(V)  &kp PRINTSCREEN    &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &trans   &hmr CAPSLOCK ESC
-                                               &kp LEFT_GUI  &trans     &trans             &mcla RCLK LCLK  &trans          &kp RIGHT_ALT
+&hmr F12 LC(TAB)  &kp F1            &kp F2     &kp F3        &kp F4            &kp F5             &kp F6           &kp F7          &kp F8         &kp F9           &kp F10   &kp F11
+&trans            &mkp MB4          &mkp MB5   &mkp LCLK     &mkp RCLK         &mkp MCLK          &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &mkp MB4  &mkp MCLK
+&trans            &hmr LG(Y) LG(Z)  &kp LG(X)  &kp LG(C)     &kp LG(V)         &kp PRINTSCREEN    &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &mkp MB5  &hmr CAPSLOCK ESC
+                                               &kp LEFT_GUI  &lower_layer 1 3  &trans             &mcla RCLK LCLK  &trans          &kp RIGHT_ALT
             >;
         };
 
