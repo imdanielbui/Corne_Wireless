@@ -5,7 +5,7 @@
  */
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 15
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 16
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -121,6 +121,6 @@
     y-input-code = <INPUT_REL_Y>;
     trigger-period-ms = <8>;
     delay-ms = <0>;
-    time-to-max-speed-ms = <500>;
+    time-to-max-speed-ms = <400>;
     acceleration-exponent = <1>;
 };
