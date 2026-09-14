@@ -56,15 +56,13 @@
             require-prior-idle-ms = <0>;
             flavor = "balanced";
         };
+    };
 
-        msc_smooth: msc_smooth {
-            compatible = "zmk,behavior-input-two-axis";
-            label = "MSC_SMOOTH";
-            x-input-code = <INPUT_REL_HWHEEL>;
-            y-input-code = <INPUT_REL_WHEEL>;
-            time-to-max-speed-ms = <400>;
-            acceleration-exponent = <0>;
-        };
+    &msc {
+        x-input-code = <INPUT_REL_HWHEEL>;
+        y-input-code = <INPUT_REL_WHEEL>;
+        time-to-max-speed-ms = <400>;
+        acceleration-exponent = <0>;
     };
 
     combos {
@@ -119,8 +117,8 @@
             bindings = <
 &hmr F12 LC(TAB)  &kp F1            &kp F2     &kp F3        &kp F4     &kp F5             &kp F6          &kp F7          &kp F8           &kp F9           &kp F10    &hmr F11 BACKSPACE
 &trans            &mkp MB4          &mkp MB5   &mkp LCLK     &mkp RCLK  &mkp MCLK          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP     &mmv MOVE_RIGHT  &mkp LCLK  &mkp MCLK
-&trans            &hmr LG(Y) LG(Z)  &kp LG(X)  &kp LG(C)     &kp LG(V)  &kp PRINTSCREEN    &mkp MB4        &msc_smooth SCRL_DOWN  &msc_smooth SCRL_UP     &mkp MB5         &mkp RCLK  &hmr CAPSLOCK ESC
-                                               &kp LEFT_GUI  &trans     &trans             &trans          &msc_smooth SCRL_LEFT  &msc_smooth SCRL_RIGHT
+&trans            &hmr LG(Y) LG(Z)  &kp LG(X)  &kp LG(C)     &kp LG(V)  &kp PRINTSCREEN    &mkp MB4        &msc SCRL_DOWN  &msc SCRL_UP     &mkp MB5         &mkp RCLK  &hmr CAPSLOCK ESC
+                                               &kp LEFT_GUI  &trans     &trans             &trans          &msc SCRL_LEFT  &msc SCRL_RIGHT
             >;
         };
 
