@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 8
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
