@@ -21,25 +21,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <290>;
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
             hold-trigger-key-positions = <0 12 24 25 13 1 2 14 26 27 15 3 4 16 28 29 17 5 36 37 38 39 40 41 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
             hold-trigger-on-release;
-        };
-
-        mcla: mcla {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MCLA";
-            #binding-cells = <2>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <0>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
-            hold-trigger-on-release;
-            bindings = <&mkp>, <&mkp>;
-
-            tapping-term-ms = <280>;
         };
 
         lower_layer: lower_layer {
@@ -144,9 +130,9 @@
 
         cad_layer {
             bindings = <
-&trans     &trans   &trans   &trans   &trans   &trans      &trans   &trans   &trans   &trans   &trans   &trans
-&m9_gld    &m9_goc  &m9_gcu  &m9_ggd  &m9_hal  &m9_pvl     &m9_mpc  &m9_wgt  &m9_pip  &m9_pra  &m9_bze  &m9_hed
-&trans     &trans   &trans   &m9_d3p  &m9_sw1  &m9_sw2     &trans   &trans   &trans   &trans   &trans   &trans
+&trans   &trans   &trans   &trans   &trans   &trans     &trans   &trans   &trans   &trans   &trans   &trans
+&m9_gld  &m9_goc  &m9_gcu  &m9_ggd  &m9_hal  &m9_pvl    &m9_mpc  &m9_wgt  &m9_pip  &m9_pra  &m9_bze  &m9_hed
+&trans   &trans   &trans   &m9_d3p  &m9_sw1  &m9_sw2    &trans   &trans   &trans   &trans   &trans   &trans
                            &trans   &trans   &trans     &trans   &trans   &trans
             >;
         };
@@ -172,3 +158,5 @@
     time-to-max-speed-ms = <300>;
     acceleration-exponent = <3>;
 };
+
+&msc { acceleration-exponent = <2>; };
