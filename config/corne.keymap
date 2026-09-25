@@ -53,14 +53,62 @@
             require-prior-idle-ms = <0>;
             flavor = "balanced";
         };
+
+        mouseSlow: mouseSlow {
+            compatible = "zmk,behavior-input-two-axis";
+            label = "MOUSESLOW";
+            #binding-cells = <1>;
+            x-input-code = <800>;
+            y-input-code = <800>;
+            time-to-max-speed-ms = <400>;
+            acceleration-exponent = <2>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        Layer_BL {
-            bindings = <&sl 4>;
+        ml {
+            bindings = <&mouseSlow MOVE_LEFT>;
+            key-positions = <24 18>;
+            layers = <2>;
+            slow-release;
+        };
+
+        md {
+            bindings = <&mouseSlow MOVE_DOWN>;
+            key-positions = <24 19>;
+            layers = <2>;
+            slow-release;
+        };
+
+        mu {
+            bindings = <&mouseSlow MOVE_UP>;
+            key-positions = <24 20>;
+            slow-release;
+            layers = <2>;
+        };
+
+        mr {
+            bindings = <&mouseSlow MOVE_RIGHT>;
+            key-positions = <24 21>;
+            layers = <2>;
+        };
+
+        openlayer {
+            bindings = <&mo 4>;
             key-positions = <37 40>;
+            layers = <0>;
+            slow-release;
+        };
+    };
+
+    macros {
+        sw1: sw1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp W &kp N1>;
+            label = "SW1";
         };
     };
 
@@ -97,7 +145,7 @@
         cad_layer {
             bindings = <
 &m9_zs     &m9_rr  &m9_pp  &m9_gld  &m9_goc  &m9_gcu    &m9_ggd  &m9_hal  &m9_pvl  &m9_mpc  &m9_wgt  &m9_d3p
-&m9_sn     &m9_m   &m9_co  &m9_r    &m9_mi   &m9_tr     &m9_x    &m9_ec   &m9_sw1  &m9_sw2  &m9_lf   &m9_pip
+&m9_sn     &m9_m   &m9_co  &m9_r    &m9_mi   &m9_tr     &m9_x    &sw1     &m9_sw1  &m9_sw2  &m9_lf   &m9_pip
 &kp LC(Z)  &m9_sp  &m9_j   &m9_bu   &m9_bdf  &m9_fe     &m9_de   &m9_pj   &m9_pu   &m9_pra  &m9_bze  &m9_hed
                            &trans   &trans   &trans     &trans   &trans   &trans
             >;
