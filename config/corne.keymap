@@ -39,47 +39,10 @@
             require-prior-idle-ms = <0>;
             flavor = "balanced";
         };
-
-        mouseSlow: mouseSlow {
-            compatible = "zmk,behavior-input-two-axis";
-            label = "MOUSESLOW";
-            #binding-cells = <1>;
-            x-input-code = <500>;
-            y-input-code = <500>;
-            time-to-max-speed-ms = <300>;
-            acceleration-exponent = <2>;
-        };
     };
 
     combos {
         compatible = "zmk,combos";
-
-        ml {
-            bindings = <&mouseSlow MOVE_LEFT>;
-            key-positions = <24 18>;
-            layers = <2>;
-            slow-release;
-        };
-
-        md {
-            bindings = <&mouseSlow MOVE_DOWN>;
-            key-positions = <24 19>;
-            layers = <2>;
-            slow-release;
-        };
-
-        mu {
-            bindings = <&mouseSlow MOVE_UP>;
-            key-positions = <24 20>;
-            slow-release;
-            layers = <2>;
-        };
-
-        mr {
-            bindings = <&mouseSlow MOVE_RIGHT>;
-            key-positions = <24 21>;
-            layers = <2>;
-        };
 
         openlayer {
             bindings = <&mo 4>;
@@ -155,11 +118,11 @@
     y-input-code = <INPUT_REL_Y>;
     trigger-period-ms = <8>;
     delay-ms = <0>;
-    time-to-max-speed-ms = <150>;
+    time-to-max-speed-ms = <100>;
     acceleration-exponent = <2>;
 };
 
 &msc {
     acceleration-exponent = <2>;
-    time-to-max-speed-ms = <500>;
+    time-to-max-speed-ms = <150>;
 };
