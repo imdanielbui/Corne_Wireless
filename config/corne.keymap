@@ -113,12 +113,6 @@
 
 /* Pointing configuration must be outside the root node. */
 
-&mmv {
-    x-input-code = <INPUT_REL_X>;
-    y-input-code = <INPUT_REL_Y>;
-    acceleration-exponent = <3>;
-};
-
 &msc {
     acceleration-exponent = <2>;
     time-to-max-speed-ms = <150>;
