@@ -44,9 +44,9 @@
             compatible = "zmk,behavior-input-two-axis";
             label = "MOUSESLOW";
             #binding-cells = <1>;
-            x-input-code = <300>;
-            y-input-code = <300>;
-            time-to-max-speed-ms = <400>;
+            x-input-code = <500>;
+            y-input-code = <500>;
+            time-to-max-speed-ms = <300>;
             acceleration-exponent = <2>;
         };
     };
@@ -155,8 +155,11 @@
     y-input-code = <INPUT_REL_Y>;
     trigger-period-ms = <8>;
     delay-ms = <0>;
-    time-to-max-speed-ms = <300>;
-    acceleration-exponent = <3>;
+    time-to-max-speed-ms = <150>;
+    acceleration-exponent = <2>;
 };
 
-&msc { acceleration-exponent = <2>; };
+&msc {
+    acceleration-exponent = <2>;
+    time-to-max-speed-ms = <500>;
+};
