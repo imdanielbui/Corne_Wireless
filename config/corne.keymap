@@ -116,9 +116,6 @@
 &mmv {
     x-input-code = <INPUT_REL_X>;
     y-input-code = <INPUT_REL_Y>;
-    trigger-period-ms = <8>;
-    delay-ms = <0>;
-    time-to-max-speed-ms = <125>;
     acceleration-exponent = <3>;
 };
 
