@@ -120,5 +120,5 @@
 
 &mmv {
     acceleration-exponent = <2>;
-    time-to-max-speed-ms = <170>;
+    time-to-max-speed-ms = <120>;
 };
